@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td><h3>Number of Visits:</h3></td>
+                <td><h3>{{ visits }}</h3></td>
+            </tr>
+            <tr>
+                <td><h3>Counter:</h3></td>
+                <td><h3>{{ counter }}</h3></td>
+            </tr>
+        </table>
+        
+        <br>       
+        <form action="/add" method="post">
+            <label for="add_amount">Count per visit</label>
+            <input type="number" name="add_amount" value={{ increment }}>
+            <br>
+            <div>
+                <button type="submit" class="btn btn-primary btn-sm">Visit Again</button>
+                <button class="btn btn-warning btn-sm"><a href="/reset_count" class="text-white">Reset Counter</a></button>
+                <button class="btn btn-danger btn-sm"><a href="/destroy_session" class="text-white">Reset All</a></button>
+            </div>
+        </form>
+
+    </div>
+    
+
+</body>
+</html>
